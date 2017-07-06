@@ -15,6 +15,7 @@
         <div>
             Hello world!
         </div>
+        <p>@Html.ActionLink("Create New","Create")</p>
         <table>
             <tr>
                 <th>
@@ -34,7 +35,10 @@
                         @Html.DisplayFor(modelItem => item.Email)
                     </td>
                     <td>
+                        @*@Html.ActionLink("Details", "Details", new { id = item.ID })生成一个相同controller下的路由地址。*@
                         @Html.ActionLink("Details", "Details", new { id = item.ID })
+                        @Html.ActionLink("Edit","Edit",new { id=item.ID})
+                        @Html.ActionLink("Delete","Delete",new { id=item.ID})
                     </td>
                 </tr>
             }

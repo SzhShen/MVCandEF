@@ -97,5 +97,20 @@ namespace MVCDemo.Controllers
             return RedirectToAction("Index");
         }
         #endregion
+        #region 删除用户
+        public ActionResult Delete(int id)
+        {
+            SysUser sysUser = db.SysUsers.Find(id);
+            return View(sysUser);
+        }
+        [HttpPost,ActionName("Delete")]
+        public ActionResult DeleteConfirmed(int id)
+        {
+            SysUser sysUser = db.SysUsers.Find(id);
+            db.SysUsers.Remove(sysUser);
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
+        #endregion
     }
 }

@@ -1,0 +1,35 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+@model MVCDemo.Models.SysUser
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Delete</title>
+</head>
+<body>
+    <div> 
+        <h2>Delete</h2>
+        <h3>Are you sure want to delete this?</h3>
+        <h4>User</h4>
+        <dl>
+            <dt>@Html.DisplayNameFor(model=>model.UserName)</dt>
+            <dt>@Html.DisplayFor(model=>model.UserName)</dt>
+
+            <dt>@Html.DisplayNameFor(model=>model.Email)</dt>
+            <dt>@Html.DisplayFor(model=>model.Email)</dt>
+        </dl>
+
+        @using (Html.BeginForm())
+        {
+            <div>
+                <input type="submit" value="Delete" />
+            </div>
+        }
+        <div>@Html.ActionLink("Back to List","Index")</div>
+    </div>
+</body>
+</html>
