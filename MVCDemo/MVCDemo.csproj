@@ -90,6 +90,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\MVCDemo.mdf" />
+    <Content Include="App_Data\MVCDemo_log.ldf">
+      <DependentUpon>MVCDemo.mdf</DependentUpon>
+    </Content>
     <Content Include="Global.asax" />
     <Content Include="WebForms\WebForm1.aspx" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
@@ -131,6 +135,7 @@
     <Content Include="Views\WebForms\WebForm1.cshtml" />
     <Content Include="Views\Account\Login.cshtml" />
     <Content Include="Views\Account\Register.cshtml" />
+    <Content Include="Views\Account\Details.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -139,7 +144,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
     <Folder Include="ViewModels\" />
   </ItemGroup>
   <PropertyGroup>

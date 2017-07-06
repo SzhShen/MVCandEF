@@ -1,6 +1,8 @@
 ﻿using MVCDemo.DAL;
+using MVCDemo.Models;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -14,7 +16,7 @@ namespace MVCDemo.Controllers
         // GET: /Account/
         public ActionResult Index()
         {
-            return View();
+            return View(db.SysUsers );
         }
 
         public ActionResult Login()
@@ -59,6 +61,41 @@ namespace MVCDemo.Controllers
             ViewBag.Register =  "注册账号 "+email;
             return View();
         }
-
+        public ActionResult Details(int id)
+        {
+            SysUser sysUser = db.SysUsers.Find(id);
+            return View(sysUser);
+        }
+        #region 新建用户
+        /// <summary>
+        /// 新建用户
+        /// </summary>
+        /// <returns></returns>
+        public ActionResult Create()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult Create(SysUser sysUser)
+        {
+            db.SysUsers.Add(sysUser);
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
+        #endregion
+        #region 修改用户
+        public ActionResult Edit(int id)
+        {
+            SysUser sysUser = db.SysUsers.Find(id);
+            return View(sysUser);
+        }
+        [HttpPost]
+        public ActionResult Edit(SysUser sysUser)
+        {
+            db.Entry(sysUser).State = EntityState.Modified;
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
+        #endregion
     }
 }
