@@ -149,6 +149,9 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Content\" />
+    <Folder Include="fonts\" />
+    <Folder Include="OpenSource\" />
     <Folder Include="ViewModels\" />
   </ItemGroup>
   <PropertyGroup>

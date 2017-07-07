@@ -27,6 +27,15 @@ namespace MVCDemo.DAL
             sysRoles.ForEach(s => context.SysRoles.Add(s));
             context.SaveChanges();
 
+            var sysUserRoles = new List<SysUserRole>
+            {
+                new SysUserRole {SysUserID=1,SysRoleID=1 },
+                new SysUserRole {SysUserID=1,SysRoleID=2 },
+                new SysUserRole {SysUserID=2,SysRoleID=2 }
+            };
+            sysUserRoles.ForEach(s => context.SysUserRoles.Add(s));
+            context.SaveChanges();
+
         }
     }
 }
