@@ -531,6 +531,7 @@
     <Content Include="Views\Account\SelectUserDetails.cshtml" />
     <Content Include="Views\Admin\_ViewStart.cshtml" />
     <Content Include="Views\MVCDemo\HelperTest.cshtml" />
+    <Content Include="Views\Shared\_PartialPageWidget.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

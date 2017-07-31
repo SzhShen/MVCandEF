@@ -4,4 +4,10 @@
 }
 
 <h2>Index</h2>
+<h1>通过@@Html.Partial来使用</h1>
+@Html.Partial("~/Views/Shared/_PartialPageWidget.cshtml")
+<h1>通过 @@Html.RenderPartial来使用</h1>
+@{
+    Html.RenderPartial("~/Views/Shared/_PartialPageWidget.cshtml");
+}
 
