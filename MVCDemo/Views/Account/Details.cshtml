@@ -1,9 +1,9 @@
-﻿
+﻿@model MVCDemo.Models.SysUser
+
 @{
     Layout = null;
 }
 
-@model MVCDemo.Models.SysUser
 <!DOCTYPE html>
 
 <html>
@@ -15,13 +15,10 @@
     <div>
         <dl>
             <dt>@Html.DisplayNameFor(model => model.UserName)</dt>
-            <dt>@Html.DisplayFor(model => model.UserName)</dt>
+            <dd>@Html.DisplayFor(model => model.UserName)</dd>
 
             <dt>@Html.DisplayNameFor(model => model.Email)</dt>
-            <dt>@Html.DisplayFor(model => model.Email)</dt>
-
-            <dt>@Html.DisplayNameFor(model => model.Password)</dt>
-            <dt>@Html.DisplayFor(model => model.Password)</dt>
+            <dd>@Html.DisplayFor(model => model.Email)</dd>
 
             <dt>@Html.DisplayNameFor(model => model.SysUserRoles)</dt>
             <dd>
@@ -33,8 +30,8 @@
                     @foreach (var item in Model.SysUserRoles)
                     {
                         <tr>
-                            <td>@Html.DisplayFor(modelItem => item.SysRole.RoleName)</td>
-                            <td>@Html.DisplayFor(modelItem => item.SysRole.RoleDesc)</td>
+                            <td>@Html.DisplayFor(modelItem=>item.SysRole.RoleName)</td>
+                            <td>@Html.DisplayFor(modelItem=>item.SysRole.RoleDesc)</td>
                         </tr>
                     }
                 </table>
