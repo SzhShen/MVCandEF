@@ -15,6 +15,7 @@ namespace MVCDemo.DAL
         {
 
         }
+        public DbSet<Test> Tests { get; set; }
         public DbSet<SysUser> SysUsers { get; set; }
         public DbSet<SysRole> SysRoles { get; set; }
         public DbSet<SysUserRole> SysUserRoles { get; set; }
