@@ -1,0 +1,86 @@
+﻿@model MVCDemo.ViewModels.UserRoleIndexData
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+<h2>UserRoles</h2>
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table table-striped">
+    <tr>
+        <th>
+            UserName
+        </th>
+        <th>
+            Email
+        </th>
+        <th>
+            CreateDate
+        </th>
+        <th>
+            Department
+        </th>
+        <th>
+            Roles
+        </th>
+        <th></th>
+    </tr>
+    @foreach (var item in Model.SysUsers)
+    {
+        string selectedRow = "";
+        if (item.ID == ViewBag.UserID)
+        {
+            selectedRow = "success";
+        }
+        <tr class="@selectedRow">
+            <td>
+                @Html.DisplayFor(modelItem => item.UserName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CreateDate)
+            </td>
+            <td>
+                @if (item.SysDepartment != null)
+                {
+                    @item.SysDepartment.DepartmentName
+                }
+            </td>
+            <td>
+                @{
+                    foreach (var userRole in item.SysUserRoles)
+                    {
+                        @userRole.SysRole.RoleName <br />
+                    }
+                }
+            </td>
+            <td>
+                @Html.ActionLink("Select", "Index", new { id = item.ID })
+            </td>
+        </tr>
+                    }
+</table>
+@if (Model.SysRoles != null)
+{
+    <h3>Related Roles</h3>
+    <table class="table table-striped">
+        <tr>
+            <th>RoleName</th>
+            <th>RoleDesc</th>
+        </tr>
+        @foreach (var item in Model.SysRoles)
+        {
+            <tr>
+                <td>
+                    @item.RoleName
+                </td>
+                <td>
+                    @item.RoleDesc
+                </td>
+            </tr>
+        }
+    </table>
+}

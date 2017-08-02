@@ -31,8 +31,9 @@ namespace MVCDemo.Controllers
 
             ViewBag.CurrentFilter = searchString;
 
-            var users = from u in db.SysUsers
-                        select u;
+            //var users = from u in db.SysUsers
+            //            select u;
+            var users = db.SysUsers.Include(u => u.SysDepartment);
             if (!string.IsNullOrEmpty(searchString))
             {
                 users = users.Where(u => u.UserName.Contains(searchString));
@@ -110,9 +111,13 @@ namespace MVCDemo.Controllers
         [HttpPost]
         public ActionResult Create(SysUser sysUser)
         {
-            db.SysUsers.Add(sysUser);
-            db.SaveChanges();
-            return RedirectToAction("Index");
+            if (ModelState.IsValid)
+            {
+                db.SysUsers.Add(sysUser);
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            return View();
         }
    
         //修改用户

@@ -499,6 +499,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\MVCDemoController.cs" />
+    <Compile Include="Controllers\UserRoleController.cs" />
     <Compile Include="Controllers\WebFormsController.cs" />
     <Compile Include="DAL\AccountContext.cs" />
     <Compile Include="DAL\AccountInitializer.cs" />
@@ -513,7 +514,28 @@
     <Compile Include="Migrations\201708010134460_AddTestTable.Designer.cs">
       <DependentUpon>201708010134460_AddTestTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201708020221046_AddCreateDateToSysUser.cs" />
+    <Compile Include="Migrations\201708020221046_AddCreateDateToSysUser.Designer.cs">
+      <DependentUpon>201708020221046_AddCreateDateToSysUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708020239045_MaxLengthOnNames.cs" />
+    <Compile Include="Migrations\201708020239045_MaxLengthOnNames.Designer.cs">
+      <DependentUpon>201708020239045_MaxLengthOnNames.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708020243121_ColumnLoginName.cs" />
+    <Compile Include="Migrations\201708020243121_ColumnLoginName.Designer.cs">
+      <DependentUpon>201708020243121_ColumnLoginName.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708020251540_AddSysDepartmentTable.cs" />
+    <Compile Include="Migrations\201708020251540_AddSysDepartmentTable.Designer.cs">
+      <DependentUpon>201708020251540_AddSysDepartmentTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708020253360_AddSysDepartmentIDToSysUser.cs" />
+    <Compile Include="Migrations\201708020253360_AddSysDepartmentIDToSysUser.Designer.cs">
+      <DependentUpon>201708020253360_AddSysDepartmentIDToSysUser.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\SysDepartment.cs" />
     <Compile Include="Models\SysRole.cs" />
     <Compile Include="Models\SysUser.cs" />
     <Compile Include="Models\SysUserRole.cs" />
@@ -521,6 +543,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\IsysUserRepository.cs" />
     <Compile Include="Repositories\Repositories.cs" />
+    <Compile Include="ViewModels\UserRoleIndexData.cs" />
     <Compile Include="WebForms\WebForm1.aspx.cs">
       <DependentUpon>WebForm1.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -551,6 +574,7 @@
     <Content Include="Views\Admin\_ViewStart.cshtml" />
     <Content Include="Views\MVCDemo\HelperTest.cshtml" />
     <Content Include="Views\Shared\_PartialPageWidget.cshtml" />
+    <Content Include="Views\UserRole\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -560,7 +584,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="fonts\" />
-    <Folder Include="ViewModels\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201707310343518_InitialCreate.resx">
@@ -568,6 +591,21 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201708010134460_AddTestTable.resx">
       <DependentUpon>201708010134460_AddTestTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708020221046_AddCreateDateToSysUser.resx">
+      <DependentUpon>201708020221046_AddCreateDateToSysUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708020239045_MaxLengthOnNames.resx">
+      <DependentUpon>201708020239045_MaxLengthOnNames.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708020243121_ColumnLoginName.resx">
+      <DependentUpon>201708020243121_ColumnLoginName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708020251540_AddSysDepartmentTable.resx">
+      <DependentUpon>201708020251540_AddSysDepartmentTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708020253360_AddSysDepartmentIDToSysUser.resx">
+      <DependentUpon>201708020253360_AddSysDepartmentIDToSysUser.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
