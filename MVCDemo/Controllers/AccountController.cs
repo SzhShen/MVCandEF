@@ -7,6 +7,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using PagedList;
+using System.Data.SqlClient;
 
 namespace MVCDemo.Controllers
 {
@@ -99,7 +100,13 @@ namespace MVCDemo.Controllers
         //查询用户及角色
         public ActionResult Details(int id)
         {
-            SysUser sysUser = db.SysUsers.Find(id);
+            //SysUser sysUser = db.SysUsers.Find(id);
+            string query = "SELECT LoginName as UserName,* FROM [dbo].[SysUser] WHERE ID=@id";
+            SqlParameter[] paras = new SqlParameter[] {
+                new SqlParameter("@id",id)
+            };
+            SysUser sysUser = db.SysUsers.SqlQuery(query, paras).SingleOrDefault();
+
             return View(sysUser);
         }
 

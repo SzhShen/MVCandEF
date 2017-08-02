@@ -12,6 +12,7 @@ namespace MVCDemo.Models
         public int ID { get; set; }
         [StringLength(10,ErrorMessage ="名字不能超过10个字。")]
         [Column("LoginName")]
+        [Display(Name ="用户名")]
         public string UserName { get; set; }
         public string Email { get; set; }
         public string Password { get; set; }
